@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html5,前端," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML5保留的常用元素基本元素 &amp;lt;!-- --&amp;gt;: 定义注释 &amp;lt;html&amp;gt;: 文档根元素 &amp;lt;head&amp;gt;: 定义文档头部信息 &amp;lt;title&amp;gt;: 定义文档页面标题 &amp;lt;body&amp;gt;: 定义文档的主题部分 &amp;lt;h1&amp;gt;~&amp;lt;h6&amp;gt;: 定义标题 &amp;lt;p&amp;gt;: 定义段落 &amp;lt;br&amp;gt;: 插入一个换行 &amp;lt;hr&amp;g">
+<meta name="keywords" content="html5,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5常用的元素与属性">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/HTML5的常用元素与属性/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTML5保留的常用元素基本元素 &amp;lt;!-- --&amp;gt;: 定义注释 &amp;lt;html&amp;gt;: 文档根元素 &amp;lt;head&amp;gt;: 定义文档头部信息 &amp;lt;title&amp;gt;: 定义文档页面标题 &amp;lt;body&amp;gt;: 定义文档的主题部分 &amp;lt;h1&amp;gt;~&amp;lt;h6&amp;gt;: 定义标题 &amp;lt;p&amp;gt;: 定义段落 &amp;lt;br&amp;gt;: 插入一个换行 &amp;lt;hr&amp;g">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-17T13:53:18.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5常用的元素与属性">
+<meta name="twitter:description" content="HTML5保留的常用元素基本元素 &amp;lt;!-- --&amp;gt;: 定义注释 &amp;lt;html&amp;gt;: 文档根元素 &amp;lt;head&amp;gt;: 定义文档头部信息 &amp;lt;title&amp;gt;: 定义文档页面标题 &amp;lt;body&amp;gt;: 定义文档的主题部分 &amp;lt;h1&amp;gt;~&amp;lt;h6&amp;gt;: 定义标题 &amp;lt;p&amp;gt;: 定义段落 &amp;lt;br&amp;gt;: 插入一个换行 &amp;lt;hr&amp;g">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/17/HTML5的常用元素与属性/"/>
+
+
+
+
+
+  <title>HTML5常用的元素与属性 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/HTML5的常用元素与属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GeryJiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML5常用的元素与属性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T21:59:46+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTML5保留的常用元素"><a href="#HTML5保留的常用元素" class="headerlink" title="HTML5保留的常用元素"></a>HTML5保留的常用元素</h2><h3 id="基本元素"><a href="#基本元素" class="headerlink" title="基本元素"></a>基本元素</h3><ul>
+<li><code>&lt;!-- --&gt;</code>: 定义注释</li>
+<li><code>&lt;html&gt;</code>: 文档根元素</li>
+<li><code>&lt;head&gt;</code>: 定义文档头部信息</li>
+<li><code>&lt;title&gt;</code>: 定义文档页面标题</li>
+<li><code>&lt;body&gt;</code>: 定义文档的主题部分</li>
+<li><code>&lt;h1&gt;~&lt;h6&gt;</code>: 定义标题</li>
+<li><code>&lt;p&gt;</code>: 定义段落</li>
+<li><code>&lt;br&gt;</code>: 插入一个换行</li>
+<li><code>&lt;hr&gt;</code>: 定义水平线</li>
+<li><code>&lt;div&gt;</code>: 定义文档中的节</li>
+<li><code>&lt;span&gt;</code>: 定义一般性文本  </li>
+</ul>
+<h3 id="文本格式相关元素"><a href="#文本格式相关元素" class="headerlink" title="文本格式相关元素"></a>文本格式相关元素</h3><ul>
+<li><code>&lt;b&gt;</code>: 粗体</li>
+<li><code>&lt;i&gt;</code>: 斜体</li>
+<li><code>&lt;em&gt;</code>: 强调文本，实际效果与斜体差不多</li>
+<li><code>&lt;strong&gt;</code>: 粗体，与<code>&lt;b&gt;</code>基本相同</li>
+<li><code>&lt;small&gt;</code>: 小号字体文本</li>
+<li><code>&lt;sup&gt;</code>: 上标</li>
+<li><code>&lt;sub&gt;</code>: 下标</li>
+<li><code>&lt;bdo&gt;</code>: 定义文本显示方向，应指定dir属性，值为ltr或rtl（指标签内的文本在显示时从哪个方向开始显示）。</li>
+</ul>
+<h3 id="语义相关元素"><a href="#语义相关元素" class="headerlink" title="语义相关元素"></a>语义相关元素</h3><ul>
+<li><code>&lt;abbr&gt;</code>: 缩写，指定title属性代表全称</li>
+<li><code>&lt;address&gt;</code>: 地址，通常会被斜体显示</li>
+<li><code>&lt;blockquote&gt;</code>: 定义一段长的引用文本</li>
+<li><code>&lt;q&gt;</code>: 短引用文本</li>
+<li><code>&lt;cite&gt;</code>: 表示作品的标题（歌名书名等），斜体显示</li>
+<li><code>&lt;code&gt;</code>: 表示一段计算机代码</li>
+<li><code>&lt;dfn&gt;</code>: 定义一个专业术语，通常斜体或粗体显示</li>
+<li><code>&lt;del&gt;</code>: 删除线,中画线显示</li>
+<li><code>&lt;ins&gt;</code>: 插入的文本，下画线显示</li>
+<li><code>&lt;pre&gt;</code>: 预格式</li>
+<li><code>&lt;samp&gt;</code>: 定义示范文本内容</li>
+<li><code>&lt;kdb&gt;</code>: 键盘文本，表示文本是键盘输入的</li>
+<li><code>&lt;var&gt;</code>: 表示一个变量，斜体显示</li>
+</ul>
+<h3 id="使用a元素添加超链接和锚点"><a href="#使用a元素添加超链接和锚点" class="headerlink" title="使用a元素添加超链接和锚点"></a>使用a元素添加超链接和锚点</h3><p>a元素的属性：</p>
+<ul>
+<li>href：指定超链接所链接的另一个资源（url）</li>
+<li>hreflang：指定超链接所链接的的文档所使用的语言</li>
+<li>target：指定使用哪个框架来装载另一个资源，该属性有_self（当前窗口），_blank（新窗口），_top（顶层框架），_parent（父框架）。</li>
+<li>download：用于让用户下载链接指定的资源，属性值为下载时的默认文件名</li>
+<li>type：指定链接文档的MIME类型</li>
+<li>media：指定目标链接所引用的媒体类型<br>a元素主要可以包含文本，图像，各种文本格式化元素和表单元素等内容。</li>
+</ul>
+<h3 id="列表元素"><a href="#列表元素" class="headerlink" title="列表元素"></a>列表元素</h3><ul>
+<li><code>&lt;ul&gt;</code>: 无序列表</li>
+<li><code>&lt;ol&gt;</code>: 有序列表</li>
+<li><ul>
+<li>start：指定列表的起始数字</li>
+</ul>
+</li>
+<li><ul>
+<li>type：指定使用哪种类型的编号，1代表数字，A或a代表使用大小写字母，I或i代表使用大小罗马数字（已不推荐，可用css修饰）</li>
+</ul>
+</li>
+<li><ul>
+<li>reversed：定义排序反转</li>
+</ul>
+</li>
+<li><code>&lt;li&gt;</code>: 定义列表项</li>
+<li><code>&lt;dl&gt;</code>: 定义术语列表</li>
+<li><code>&lt;dt&gt;</code>: 定义标题列表项</li>
+<li><code>&lt;dd&gt;</code>: 定义普通列表项</li>
+</ul>
+<h3 id="使用img元素添加图片"><a href="#使用img元素添加图片" class="headerlink" title="使用img元素添加图片"></a>使用img元素添加图片</h3><p>img必须指定元素：</p>
+<ul>
+<li>src：指定图片文件的位置</li>
+<li>alt：指定一段文字，用于图片的提示信息</li>
+</ul>
+<hr>
+<ul>
+<li>height：高</li>
+<li>width：宽<br>与图片相关有另两个元素：</li>
+<li><code>&lt;map&gt;</code>: 用于定义图片的映射，包含一个或多个<code>&lt;area&gt;</code>元素每个<code>&lt;area&gt;</code>元素定义一个区域，链接到不同的url。</li>
+<li><code>&lt;area&gt;</code>: 定义图片映射的内部区域，空元素，属性：</li>
+<li><ul>
+<li>shape：指定内部区域是那种区域，默认rect，还可定义circle和ploy圆形与多边形区域。</li>
+</ul>
+</li>
+<li><ul>
+<li>coords：指定多个坐标值，用于确定区域的位置。</li>
+</ul>
+</li>
+<li><ul>
+<li>href：用于确定区域链接的资源</li>
+</ul>
+</li>
+<li><ul>
+<li>alt：同图片alt</li>
+</ul>
+</li>
+<li><ul>
+<li>target：同a标签</li>
+</ul>
+</li>
+</ul>
+<h3 id="表格相关元素"><a href="#表格相关元素" class="headerlink" title="表格相关元素"></a>表格相关元素</h3><ul>
+<li><code>&lt;table&gt;</code>: 定义表格</li>
+<li><ul>
+<li>cellpadding：单元格内容与单元格边框的距离</li>
+</ul>
+</li>
+<li><ul>
+<li>celllspacing：指定单元格之间的间距</li>
+</ul>
+</li>
+<li><code>&lt;caption&gt;</code>: 表格标题，只可有0个或多个</li>
+<li><code>&lt;tr&gt;</code>: 定义表格行</li>
+<li><code>&lt;td&gt;</code>: 定义单元格</li>
+<li><ul>
+<li>colspan: 指定单元格跨多少列</li>
+</ul>
+</li>
+<li><ul>
+<li>rosspan: 指定单元格跨多少行</li>
+</ul>
+</li>
+<li><code>&lt;th&gt;</code>: 定义表格的表头单元格</li>
+<li><code>&lt;thead&gt;</code>: 定义表格头</li>
+<li><code>&lt;tbody&gt;</code>: 定义表格主体</li>
+<li><code>&lt;tfoot&gt;</code>: 定义表格脚<br>使用<code>&lt;tbody&gt;</code>可以将表格分成几个独立的部分。</li>
+<li><code>&lt;col&gt;</code>: 为表格中的一个或多个列指定属性值</li>
+<li><code>&lt;colgroup&gt;</code>: 为表格中的一个或多个列指定属性值,用于组织多个<code>&lt;col&gt;</code>。<h2 id="增强的iframe元素"><a href="#增强的iframe元素" class="headerlink" title="增强的iframe元素"></a>增强的iframe元素</h2>iframe属性：</li>
+<li>src： 指定url</li>
+<li>name：指定该iframe名字</li>
+<li>longdesc：指定url，包含该iframe的长描述</li>
+<li>scrolling： 是否显示滚动条yes，no，auto。</li>
+<li>height：高</li>
+<li>width：宽</li>
+<li>frameborder：是否显示边框</li>
+<li>marginheight：上下页边距</li>
+<li>marginwidth：左右页边距</li>
+<li>srcdoc：srcdoc允许直接指定html片段，即直接在其属性值中编写html即可显示，并且优先级高于src。</li>
+<li>seamless：指定iframe看上去是否是原文档的一部分，不再显示边框和滚动条。</li>
+<li>sandbox：一个安全性属性，增加一系列额外限制</li>
+<li><ul>
+<li>allow-forms：允许框架内的表单提交</li>
+</ul>
+</li>
+<li><ul>
+<li>allow-same-origin：与allow-forms一起使用，允许ajax交互否则拒绝</li>
+</ul>
+</li>
+<li><ul>
+<li>allow-scripts：允许加载框架内的js脚本</li>
+</ul>
+</li>
+<li><ul>
+<li>allow-top-navigation：允许框架内的超链接导航到父级窗口</li>
+</ul>
+</li>
+</ul>
+<h2 id="HTML5保留的通用属性"><a href="#HTML5保留的通用属性" class="headerlink" title="HTML5保留的通用属性"></a>HTML5保留的通用属性</h2><ul>
+<li>id：为元素指定唯一的标识。</li>
+<li>style：为元素指定css样式。</li>
+<li>class：用于匹配css样式的class选择器。</li>
+<li>dir：设置元素中内容的排列方向，有ltr和rtl两个属性值。</li>
+<li>title：为元素指定额外信息，通常在鼠标移到该元素上时会显示title属性所指定的信息。</li>
+<li>lang：设置该值告诉浏览器和搜索引擎网页与元素所使用的语言。</li>
+<li>accesskey：设置激活元素的快捷键，通过alt+x（x为设置的accesskey的值）。</li>
+<li>tabindex：设置值来通过tab键来不断切换窗口或页面中的html元素，来获得焦点。</li>
+</ul>
+<h2 id="HTML5新增的通用属性"><a href="#HTML5新增的通用属性" class="headerlink" title="HTML5新增的通用属性"></a>HTML5新增的通用属性</h2><ul>
+<li>contentEditable：该属性值如果为true，那么，浏览器将会允许开发者直接编辑该元素内的内容。具有“可继承”的特点，如果一个元素的父元素可编辑那么该元素默认也是可编辑的，除非指定contentEdiable为false。</li>
+<li>designMode：designMode相当于一个全局的contentEditable。</li>
+<li>hidden：支持true与false，若为true则该元素不会在浏览器上显示，且不保留占用空间。</li>
+<li>spellcheck：为<code>&lt;input /&gt;&lt;textarea/&gt;</code>等元素增加此元素，boolean值属性，可以对用户输入的文本内容进行输入检查，若检查不通过将会对拼错的单词进行提醒。</li>
+<li>contentmenu：为元素设置上下文菜单，当用户右键单击是激发菜单。</li>
+</ul>
+<h2 id="HTML5新增的结构元素"><a href="#HTML5新增的结构元素" class="headerlink" title="HTML5新增的结构元素"></a>HTML5新增的结构元素</h2><ul>
+<li><code>&lt;article&gt;</code>: 表示页面上完整独立的一篇文章。可用<code>&lt;header&gt;&lt;footer&gt;</code>来进行定义文章的标题和脚注，也可用多个<code>&lt;section&gt;</code>分成多个段落。</li>
+<li><code>&lt;section&gt;</code>: 对页面内容进行分块。</li>
+<li><code>&lt;header&gt;</code>: 代表标题，类似hn标签，但使用更加广泛，可包含<code>&lt;p&gt;和&lt;span&gt;</code>等标签。</li>
+<li><code>&lt;footer&gt;</code>: 用于父级元素定义脚注信息，如版权等。</li>
+<li><code>&lt;nav&gt;</code>: 用于定义页面上的导航条</li>
+<li><code>&lt;aside&gt;</code>: 用来定义当前页面或文章的附属信息。</li>
+<li><code>&lt;main&gt;</code>: 一个html最多只能包含一个main元素，该元素用于包含除导航条，logo，版权信息等之外的主要内容。</li>
+<li><code>&lt;figure&gt;</code>: 用于表示一片独立的“图片区域”，内部包含一个或多个<code>&lt;img&gt;</code>标签。</li>
+<li><code>&lt;figcaption&gt;</code>: 定义<code>&lt;figure&gt;</code>的标题。</li>
+</ul>
+<h2 id="HTML5新增的语义元素"><a href="#HTML5新增的语义元素" class="headerlink" title="HTML5新增的语义元素"></a>HTML5新增的语义元素</h2><ul>
+<li><code>&lt;mark&gt;</code>: 用于显示页面中需要重点“关注”的内容，通常被黄色显示出内容。</li>
+<li><code>&lt;time&gt;</code>: 用于显示被标注是日期或时间的内容。</li>
+<li><code>&lt;details&gt;</code>: 用于显示一段详细信息或某个主题的细节。</li>
+<li><code>&lt;summary&gt;</code>: 定义摘要信息，通常在<code>&lt;details&gt;</code>内部使用，摘要可见，点击摘要是显示details内容。</li>
+<li><code>&lt;ruby&gt;</code>: 用于为一个或多个短语定义ruby注释，短语后紧跟一段注释文字。</li>
+<li><code>&lt;rb&gt;</code>: 定义ruby注解所解释的词语</li>
+<li><code>&lt;rt&gt;</code>: ruby注解的说明部分（发音或其他注解）</li>
+<li><code>&lt;rp&gt;</code>: 用于为不支持ruby注解提供备用文本</li>
+<li><code>&lt;bdi&gt;</code>: 用于将一段文本从上下文中隔离出来，防止不同文字等导致的页面混乱</li>
+<li><code>&lt;wbr&gt;</code>: 用于指定在文本的指定位置添加换行</li>
+<li><code>&lt;menu&gt;</code>: 定义菜单</li>
+<li><code>&lt;menuitem&gt;</code>: 定义菜单项<br>属性：<br>type：定义菜单项的类型。支持command，checkbox，radio三个属性值<br>label： 该属性指定菜单项的文本<br>icon： 指定菜单项的图标<br>disabled：指定菜单项是否不可用<br>checked：指定菜单项是否已勾选<br>radiogroup：用于指定该菜单项所属的菜单组<br>default：指定该菜单项是否为默认菜单项</li>
+</ul>
+<h2 id="HTML5头部和元信息"><a href="#HTML5头部和元信息" class="headerlink" title="HTML5头部和元信息"></a>HTML5头部和元信息</h2><ul>
+<li><code>&lt;script&gt;</code>: 用于包含javascript脚本</li>
+<li><code>&lt;noscript&gt;</code>: 用于向禁止了javascript脚本或不支持javascript脚本的浏览器显示提示信息</li>
+<li><code>&lt;style&gt;</code>: 用于定义内部css样式</li>
+<li><code>&lt;link&gt;</code>: 用于链接图标，css样式以及各种外部资源</li>
+<li><code>&lt;title&gt;</code>: 用于定义文档标题</li>
+<li><code>&lt;base&gt;</code>: 用于指定页面中所有链接的基准路径</li>
+<li><code>&lt;meta&gt;</code>: 用于定义文档页面的元数据</li>
+</ul>
+<h3 id="lt-link-gt-元素属性"><a href="#lt-link-gt-元素属性" class="headerlink" title="&lt;link&gt;元素属性"></a><code>&lt;link&gt;</code>元素属性</h3><ul>
+<li>href：链接资源url</li>
+<li>hreflang： 链接资源的语言</li>
+<li>media：设置链接资源仅适用与哪些设备</li>
+<li>rel：设置文档与链接资源的关系<br>rel属性值：<br>alternate：链接资源是本文档的替代版本<br>author：链接资源是本文档的作者<br>copytight：；链接资源是关于本文档的版权信息<br>help：链接资源是本文档的帮助<br>icon：链接的图标是本文档的图标<br>license：；链接资源是本文档的授权信息<br>prefetch：用于预加载资源<br>stylesheet： 外部样式单</li>
+<li>sizes：指定图标的大小</li>
+<li>type：指定链接资源的MIME类型</li>
+</ul>
+<h3 id="lt-base-gt-元素属性"><a href="#lt-base-gt-元素属性" class="headerlink" title="&lt;base&gt;元素属性"></a><code>&lt;base&gt;</code>元素属性</h3><ul>
+<li>href：指定所有链接的基准路线</li>
+<li>target：如a标签</li>
+</ul>
+<h3 id="lt-meta-gt-元素属性"><a href="#lt-meta-gt-元素属性" class="headerlink" title="&lt;meta&gt;元素属性"></a><code>&lt;meta&gt;</code>元素属性</h3><ul>
+<li>http-equip：指定元信息的名称（浏览器识别）</li>
+<li>name：指定元信息的名称，可随意指定</li>
+<li>content：指定元信息的值</li>
+<li>charset：指定页面的字符集</li>
+<li>expires：指定网页的过期时间</li>
+<li>pragma：指定禁止浏览器从本地磁盘缓存中湖区该页面内容，浏览器一旦离开该网页就无法脱机访问</li>
+<li>refresh：指定浏览器多长时间自动刷新指定页面</li>
+<li>set-cookie：设置cookie</li>
+<li>content-type：设置该页面的内容类型和所用的字符集</li>
+</ul>
+<h2 id="HTML5新增的拖放API"><a href="#HTML5新增的拖放API" class="headerlink" title="HTML5新增的拖放API"></a>HTML5新增的拖放API</h2><p>&emsp;&emsp;<code>&lt;a&gt;&lt;img&gt;</code>都是可拖动的，不过a需要设置href属性。而其他元素要实现拖动只需要把该新元素的draggable属性设置为true就可以了。但是这样拖动并没有携带数据，所以看不到拖动效果。因此需要拖动元素的ondragstart事件指定监听器，在该监听器中让拖动操作可以携带数据，这样就可以看到拖动效果了。</p>
+<h3 id="拖放操作相关事件"><a href="#拖放操作相关事件" class="headerlink" title="拖放操作相关事件"></a>拖放操作相关事件</h3><ul>
+<li>ondragstart：开始拖动操作时触发</li>
+<li>ondrag：拖动过程中会不断的触发</li>
+<li>ondragend：拖动结束时触发</li>
+<li>ondragenter：被拖动的元素进入本元素范围内时触发</li>
+<li>ondragover：拖动元素进入本元素范围内拖动时会不断触发</li>
+<li>ondragleave：拖动元素离开本元素时触发</li>
+<li>ondrop：其他元素被放到本元素时触发</li>
+</ul>
+<h3 id="DataTransfer对象"><a href="#DataTransfer对象" class="headerlink" title="DataTransfer对象"></a>DataTransfer对象</h3><ul>
+<li>dataTransfer.dropEffect: 设置或返回拖放目标上允许发生的拖放行为。</li>
+<li>dataTransfer.effectAllowed: 设置或返回被拖放元素允许发生的拖放行为。</li>
+<li>dataTransfer.items: 该属性返回了dataTransferItems对象，该对象代表了拖动数据。</li>
+<li>dataTransfer.setDragImage(element,x,y):设置拖放操作的自定义图标。</li>
+<li>dataTransfer.addElement(element): 添加自定义图标。</li>
+<li>dataTransfer.types: 该属性返回一个domstringlist对象，该对象包括了存入datatransfer中数据的所有类型。</li>
+<li>dataTransfer个体DATa(format):获取datatransfer对象中的format格式数据。</li>
+<li>dataTransfer.setData(format,data): 向datatransfer对象中设置format格式的数据。</li>
+<li>dataTransfer.clearData([format]): 清除datatransfer对象中format格式的数据。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag"># html5</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/17/HTML5的基本结构和语法变化/" rel="next" title="HTML5的基本结构和语法变化">
+                <i class="fa fa-chevron-left"></i> HTML5的基本结构和语法变化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog_logo.jpg"
+                alt="GeryJiang" />
+            
+              <p class="site-author-name" itemprop="name">GeryJiang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/GeryJiang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1939246913@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5保留的常用元素"><span class="nav-number">1.</span> <span class="nav-text">HTML5保留的常用元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本元素"><span class="nav-number">1.1.</span> <span class="nav-text">基本元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本格式相关元素"><span class="nav-number">1.2.</span> <span class="nav-text">文本格式相关元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义相关元素"><span class="nav-number">1.3.</span> <span class="nav-text">语义相关元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用a元素添加超链接和锚点"><span class="nav-number">1.4.</span> <span class="nav-text">使用a元素添加超链接和锚点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表元素"><span class="nav-number">1.5.</span> <span class="nav-text">列表元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用img元素添加图片"><span class="nav-number">1.6.</span> <span class="nav-text">使用img元素添加图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格相关元素"><span class="nav-number">1.7.</span> <span class="nav-text">表格相关元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强的iframe元素"><span class="nav-number">2.</span> <span class="nav-text">增强的iframe元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5保留的通用属性"><span class="nav-number">3.</span> <span class="nav-text">HTML5保留的通用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的通用属性"><span class="nav-number">4.</span> <span class="nav-text">HTML5新增的通用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的结构元素"><span class="nav-number">5.</span> <span class="nav-text">HTML5新增的结构元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的语义元素"><span class="nav-number">6.</span> <span class="nav-text">HTML5新增的语义元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5头部和元信息"><span class="nav-number">7.</span> <span class="nav-text">HTML5头部和元信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-link-gt-元素属性"><span class="nav-number">7.1.</span> <span class="nav-text">&lt;link&gt;元素属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-base-gt-元素属性"><span class="nav-number">7.2.</span> <span class="nav-text">&lt;base&gt;元素属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-meta-gt-元素属性"><span class="nav-number">7.3.</span> <span class="nav-text">&lt;meta&gt;元素属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5新增的拖放API"><span class="nav-number">8.</span> <span class="nav-text">HTML5新增的拖放API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拖放操作相关事件"><span class="nav-number">8.1.</span> <span class="nav-text">拖放操作相关事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataTransfer对象"><span class="nav-number">8.2.</span> <span class="nav-text">DataTransfer对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GeryJiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
