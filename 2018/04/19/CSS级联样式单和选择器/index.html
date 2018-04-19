@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端，CSS3," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="样式单的基本使用链接外部样式引入外部样式通过在&amp;lt;head../&amp;gt;内插入&amp;lt;link…/&amp;gt;元素引入外部css样式单文档：type123### 导入外部样式导入与链接外部差不多，只是语法上存在差异。导入样式需要使用&amp;lt;style../&amp;gt;元素来使用@import来执行导入：  @import “外部样式文件url”； @import url”外部样式文件url”；1234">
+<meta name="keywords" content="前端，CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS级联样式单和选择器">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/CSS级联样式单和选择器/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="样式单的基本使用链接外部样式引入外部样式通过在&amp;lt;head../&amp;gt;内插入&amp;lt;link…/&amp;gt;元素引入外部css样式单文档：type123### 导入外部样式导入与链接外部差不多，只是语法上存在差异。导入样式需要使用&amp;lt;style../&amp;gt;元素来使用@import来执行导入：  @import “外部样式文件url”； @import url”外部样式文件url”；1234">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-19T04:07:05.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS级联样式单和选择器">
+<meta name="twitter:description" content="样式单的基本使用链接外部样式引入外部样式通过在&amp;lt;head../&amp;gt;内插入&amp;lt;link…/&amp;gt;元素引入外部css样式单文档：type123### 导入外部样式导入与链接外部差不多，只是语法上存在差异。导入样式需要使用&amp;lt;style../&amp;gt;元素来使用@import来执行导入：  @import “外部样式文件url”； @import url”外部样式文件url”；1234">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/CSS级联样式单和选择器/"/>
+
+
+
+
+
+  <title>CSS级联样式单和选择器 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/CSS级联样式单和选择器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GeryJiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog_logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS级联样式单和选择器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T12:08:33+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS3/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS3</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="样式单的基本使用"><a href="#样式单的基本使用" class="headerlink" title="样式单的基本使用"></a>样式单的基本使用</h2><h3 id="链接外部样式"><a href="#链接外部样式" class="headerlink" title="链接外部样式"></a>链接外部样式</h3><p>引入外部样式通过在&lt;head../&gt;内插入&lt;link…/&gt;元素引入外部css样式单文档：<br><figure class="highlight plain"><figcaption><span>type</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 导入外部样式</span><br><span class="line">导入与链接外部差不多，只是语法上存在差异。导入样式需要使用&lt;style../&gt;元素来使用@import来执行导入：</span><br></pre></td></tr></table></figure></p>
+<p><style type="text/css"><br> @import “外部样式文件url”；<br> @import url”外部样式文件url”；<br></style><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">不建议使用，因为导入后样式会成为文档的一部分类似于内部样式。</span><br><span class="line">### 使用内部样式</span><br><span class="line">三大劣势：   </span><br><span class="line">1. 复用性差</span><br><span class="line">2. 大量的css嵌套在html中，会导致文档过大，大量的重复下载，加重网络负载。</span><br><span class="line">3. 不利于管理</span><br><span class="line">内部样式需要放在&lt;style../&gt;元素中定义，且&lt;style../&gt;元素应该放在&lt;head../&gt;元素中。格式如下：</span><br></pre></td></tr></table></figure></p>
+<p><style type="text/css"><br>样式单文件定义<br></style><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 使用行内样式</span><br><span class="line">行内样式只对单个标签有效，即在需定义样式的元素中定义style属性的值就可以了。格式如下：</span><br></pre></td></tr></table></figure></p>
+<p>style=”property1:value1;property2:value2;property3:value3..”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">### 优先级</span><br><span class="line">1. 就近原则</span><br><span class="line">2. 理论上：行内&gt;内嵌&gt;链接&gt;导入</span><br><span class="line">3. 实际上：内嵌、链接、导入在同一个文件头部，谁离相应的代码近，谁的优先级高</span><br><span class="line"></span><br><span class="line">## 选择器</span><br><span class="line">### 元素选择器</span><br><span class="line">格式：</span><br></pre></td></tr></table></figure></p>
+<p>E{…}/<em>E代表任意有效的html元素名</em>/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">甚至可以用“*”来代表E，表示页面内的任意所有元素。</span><br><span class="line"></span><br><span class="line">### 属性选择器</span><br><span class="line">从广义上讲，元素选择器其实时属性选择器的特例。属性选择器有以下几种：   </span><br><span class="line">- E&#123;...&#125;: 指定该样式对所有E元素有效</span><br><span class="line">- E[attr]&#123;...&#125;: 指定该样式对具有attr属性的E元素有效</span><br><span class="line">- E[attr=value]&#123;...&#125;: 指定该样式对包含attr属性且值为value的E元素有效</span><br><span class="line">- E[attr ~=value]&#123;...&#125;: 指定该样式对包含attr属性且值为以空格隔开的系列值，其中一个值为value的E元素有效</span><br><span class="line">- E[attr |=value]&#123;...&#125;: 指定该样式对包含attr属性且值为以连字符分隔的系列值，其中一个值为value的Tag元素有效</span><br><span class="line">**C3新增**</span><br><span class="line">- E[attr^=&quot;value&quot;]&#123;...&#125;: 指定该样式对包含attr属性且值为以value开头的字符串的E元素有效</span><br><span class="line">- E[attr$=&quot;value&quot;]&#123;...&#125;: 指定该样式对包含attr属性且值为以value结尾的字符串的E元素有效</span><br><span class="line">- E[attr*=&quot;value&quot;]&#123;...&#125;: 指定该样式对包含attr属性且值为包含value的字符串的E元素有效</span><br><span class="line">以上选择器，匹配规则越严格优先级越高。</span><br><span class="line"></span><br><span class="line">### ID选择器</span><br><span class="line">只对具有id属性的元素起作用，格式如下：</span><br></pre></td></tr></table></figure>
+<p>#id{…}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">定义只对指定元素起作用的id选择器：</span><br></pre></td></tr></table></figure></p>
+<p>E#id{…}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### class选择器</span><br><span class="line">只对具有指定class属性的元素起作用，格式如下：</span><br></pre></td></tr></table></figure></p>
+<p>[E].className{…}/<em>E可省略</em>/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 包含选择器</span><br><span class="line">用于目标选择器必须在某个选择器对应的元素内部，格式如下：</span><br></pre></td></tr></table></figure>
+<p>selector1 selector2 {…}/<em>两个都是有效选择器，且2需要在1内部</em>/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 子选择器</span><br><span class="line">类似与包含选择器，但只对选择器对应元素的子元素有效，而包含选择器则是对内部所有符合选择器条件的元素都有效（含子孙元素），格式如下：</span><br></pre></td></tr></table></figure>
+<p>selector1&gt;selector2 {…}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 兄弟选择器（C3新增）</span><br><span class="line">格式如下：</span><br></pre></td></tr></table></figure>
+<p>selector1 ~ selector2 {…}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">匹配s1**后**的匹配s2的所有兄弟节点，即所有与s1同级别的元素节点。</span><br><span class="line"></span><br><span class="line">### 选择器组合</span><br><span class="line">让一份样式对多个选择器起作用，格式如下：</span><br></pre></td></tr></table></figure>
+<p>selector1，selector2，selector3…{…}</p>
+<p><code>`</code></p>
+<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><ul>
+<li>:first-letter: 对指定对象内的第一个字符起作用，仅对块元素有效，对行内元素需要设置其width和height，或position为absolute，或display:block。</li>
+<li>:first-line: 对指定对象的第一行内容自作用，与first-letter类似，只是显示作用效果时一行。</li>
+<li>:before: 与内容相关属性相结合使用，用于在指定对象的内部的前端插入内容。</li>
+<li>:after: 与内容相关属性相结合使用，用于在指定对象的内部的尾端插入内容。</li>
+</ul>
+<h4 id="内容相关属性"><a href="#内容相关属性" class="headerlink" title="内容相关属性"></a>内容相关属性</h4><ul>
+<li>include-source: 插入值为url。</li>
+<li>content：值为字符串，对元素之前或之后插入内容。除字符串外还可以使用url（“图片url”）格式插入图片。</li>
+<li>quotes：用于为content属性定义open-quote和close-quote，两个值以空格分隔。content属性值应用open-quote和close-quote进行插入。</li>
+<li>counter-increment：定义一个计数器，值为计数器名称。可自定义编号格式为content:counter（计数器名称，list-style-type），list-style-type的值就不列举了，可自行查找。</li>
+<li>counter-reset：对指定的计数器复位。</li>
+<li>其他省略，有兴趣自行查找</li>
+</ul>
+<h2 id="CSS3新增的伪类选择器"><a href="#CSS3新增的伪类选择器" class="headerlink" title="CSS3新增的伪类选择器"></a>CSS3新增的伪类选择器</h2><h3 id="结构性伪类选择器"><a href="#结构性伪类选择器" class="headerlink" title="结构性伪类选择器"></a>结构性伪类选择器</h3><ul>
+<li>selector:root: 匹配根元素</li>
+<li>selector:first-child: 匹配选择器第一个子元素节点。</li>
+<li>selector:last-child: 匹配选择器最后一个子元素节点。</li>
+<li>selector:nth-child(n): 匹配选择器第n个子元素节点。</li>
+<li>selector:nth-last-child(n): 匹配选择器倒数第n个子元素节点。</li>
+<li>selector:only-child: 匹配选择器且作为父节点的唯一的子元素节点</li>
+<li>selector:first-of-type: 匹配与选择器元素同类型同级的兄弟元素的第一个元素。</li>
+<li>selector:last-of-type: 匹配与选择器元素同类型同级的兄弟元素的最后一个元素。</li>
+<li>selector:nth-of-type(n): 匹配与选择器元素同类型同级的兄弟元素的第n个元素。</li>
+<li>selector:nth-last-of-type(n): 匹配与选择器元素同类型同级的兄弟元素的倒数第n个元素。</li>
+<li>selector:only-of-type: 匹配与选择器同级别与类型的兄弟元素中的唯一元素。</li>
+<li>selector:empty: 匹配选择器内部没有任何子元素的元素。</li>
+<li>selector:lang(lang): 匹配选择器其内部内容是特点语言的元素。</li>
+<li>selector:nth-child(odd/event): 匹配选择器是其父节点的第奇数/偶数个节点的元素。</li>
+<li>selector:nth-last-child(odd/event): 匹配选择器是其父节点的倒数第奇数/偶数个节点的元素。</li>
+<li>selector: nth-child(xn_y): 匹配选择器必须是其父节点的第xn+y个子节点的元素。</li>
+<li>selector:nth-last-child(xn+y): 匹配选择器必须是其父节点的倒数第xn+y个子节点的元素。</li>
+<li>selector:nth-of-type(odd/event): 匹配选择器相同级别与类型的第奇数或偶数个元素。</li>
+<li>selector:nth-last-of-type(odd/event): 匹配选择器相同级别与类型的倒数第奇数或偶数个元素。</li>
+<li>selector:nth-of-type(xn+y): 匹配选择器同类型与级别的第xn+y个元素。</li>
+<li><ul>
+<li>selector:nth-last-of-type(xn+y): 匹配选择器同类型与级别的倒数第xn+y个元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="UI元素状态伪类选择器"><a href="#UI元素状态伪类选择器" class="headerlink" title="UI元素状态伪类选择器"></a>UI元素状态伪类选择器</h3><ul>
+<li>selector:link: 匹配选择器且未被访问前的元素（通常只能是超链接）</li>
+<li>selector:visited: 匹配选择器且已被访问的元素（通常只能是超链接）</li>
+<li>selector:active: 匹配选择器处于被用户激活（鼠标点击或释放之间的事件）状态的元素</li>
+<li>selector:hover: 匹配选择器鼠标悬停状态的元素</li>
+<li>selector:focus: 匹配选择器且已得到焦点的元素</li>
+<li>selector:enabled: 匹配选择器且当前处于可用状态的元素</li>
+<li>selector:diasabled: 匹配选择器且当前处于不可用状态的元素</li>
+<li>selector:checked: 匹配选择器且处于选中状态的元素</li>
+<li>selector:default: 匹配选择器且页面打开时处于选中状态的元素</li>
+<li>selector:indeterminate: 匹配选择器且处于选中状态不明确的元素</li>
+<li>selector:read-only: 匹配选择器且处于只读状态的元素</li>
+<li>selector:read-weite: 匹配选择器且处于读写状态的元素</li>
+<li>selector:required: 匹配选择器且具有必填要求的元素</li>
+<li>selector:optional:匹配选择器且无必填要求的元素</li>
+<li>selector:valid: 匹配选择器且能通过校验的元素</li>
+<li>selector:invalid: 匹配选择器且不能通过校验的元素</li>
+<li>selector:in-range: 匹配选择器且处于指定范围内的元素</li>
+<li>selector:out-of-range: 匹配选择器且当前超出指定范围的元素</li>
+<li>selector::selection: 匹配选择器中当前被选中的内容</li>
+</ul>
+<h4 id="浏览器专属属性"><a href="#浏览器专属属性" class="headerlink" title="浏览器专属属性"></a>浏览器专属属性</h4><p>有些CSS属性时最新版的，还未发布，为了让浏览器识别这些专属属性，Css规范允许在属性前添加专属前缀，常见的前缀有：   </p>
+<ul>
+<li>-ms-：IE专属</li>
+<li>-moz-：基于Gecko引擎的浏览器，如firefox</li>
+<li>webkit-：基于WebKit引擎的浏览器，如Chrome，Safari，Opera</li>
+</ul>
+<h3 id="target伪类选择器与-not伪类选择器"><a href="#target伪类选择器与-not伪类选择器" class="headerlink" title=":target伪类选择器与:not伪类选择器"></a>:target伪类选择器与:not伪类选择器</h3><ul>
+<li>selector:target: 符合选择器，且必须是命名锚点目标的元素</li>
+<li>selector1:not(selector2): 符合1但不符合2的选择器</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端，CSS3/" rel="tag"># 前端，CSS3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/18/HTML5的多媒体支持/" rel="next" title="HTML5的多媒体支持">
+                <i class="fa fa-chevron-left"></i> HTML5的多媒体支持
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog_logo.jpg"
+                alt="GeryJiang" />
+            
+              <p class="site-author-name" itemprop="name">GeryJiang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/GeryJiang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1939246913@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#样式单的基本使用"><span class="nav-number">1.</span> <span class="nav-text">样式单的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接外部样式"><span class="nav-number">1.1.</span> <span class="nav-text">链接外部样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素选择器"><span class="nav-number">1.2.</span> <span class="nav-text">伪元素选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内容相关属性"><span class="nav-number">1.2.1.</span> <span class="nav-text">内容相关属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3新增的伪类选择器"><span class="nav-number">2.</span> <span class="nav-text">CSS3新增的伪类选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构性伪类选择器"><span class="nav-number">2.1.</span> <span class="nav-text">结构性伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI元素状态伪类选择器"><span class="nav-number">2.2.</span> <span class="nav-text">UI元素状态伪类选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器专属属性"><span class="nav-number">2.2.1.</span> <span class="nav-text">浏览器专属属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#target伪类选择器与-not伪类选择器"><span class="nav-number">2.3.</span> <span class="nav-text">:target伪类选择器与:not伪类选择器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GeryJiang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
